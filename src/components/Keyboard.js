@@ -26,7 +26,7 @@ const Keyboard = () => {
           })}
       </div>
       <div className='line3'>
-      <Key keyVal={'Enter'} bigKey/>
+      <Key keyVal={'ENTER'} bigKey/>
       {keys3.map((key, index)=>{
           return (
             <div key={index}>
