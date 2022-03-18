@@ -11,6 +11,9 @@ const App = () => {
   const [board, setBoard] = useState(defaultBoard);
   const [currAttempt, setCurrAttempt] = useState({attempt: 0, letterPosition: 0});
 
+  // sample word
+  const correctWord = 'RUMON';
+
   // keyboard selection functions
   const onSelectLetter = (keyVal)=>{
     if(currAttempt.letterPosition > 4) return;
@@ -36,6 +39,7 @@ const App = () => {
   return (
     <div className='App'>
         <WorldContext.Provider value={{board, 
+        correctWord,
         setBoard,
         currAttempt,
         setCurrAttempt,
