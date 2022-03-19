@@ -1,7 +1,7 @@
 import React,{useContext} from 'react';
 import { WorldContext } from '../App';
 
-const Key = ({keyVal, bigKey, keyIndex}) => {
+const Key = ({keyVal, bigKey, keyIndex, disabled}) => {
   const {onSelectLetter, onEnter, onDeleteLetter} = useContext(WorldContext);
 
   //letter select
@@ -18,7 +18,7 @@ const Key = ({keyVal, bigKey, keyIndex}) => {
   };
 
   return (
-    <div className='key' key={keyIndex} id={bigKey && 'big'}
+    <div className='key' key={keyIndex} id={bigKey ? 'big' : disabled && 'disabled'}
     onClick={selectLetter}>{keyVal}</div>
   )
 };

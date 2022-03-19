@@ -8,7 +8,7 @@ const Keyboard = () => {
   const keys3 = ["Z", "X", "C", "V", "B", "N", "M"];
 
   // global context
-  const {onEnter, onDeleteLetter, onSelectLetter} = useContext(WorldContext);
+  const {onEnter, onDeleteLetter, onSelectLetter, disabledLetters} = useContext(WorldContext);
 
   // handle keys
   const handleKeyboard = useCallback((event)=>{
@@ -49,7 +49,7 @@ const Keyboard = () => {
         {keys1.map((key, index)=>{
           return (
              <div key={index}>
-                <Key keyVal={key} keyIndex={index}/>
+                <Key keyVal={key} keyIndex={index} disabled={disabledLetters.includes(key)}/>
               </div>
           )
         })}
@@ -58,7 +58,7 @@ const Keyboard = () => {
         {keys2.map((key, index)=>{
             return (
               <div key={index}>
-                <Key keyVal={key} keyIndex={index}/>
+                <Key keyVal={key} keyIndex={index} disabled={disabledLetters.includes(key)}/>
               </div>
             )
           })}
@@ -68,7 +68,7 @@ const Keyboard = () => {
       {keys3.map((key, index)=>{
           return (
             <div key={index}>
-                <Key keyVal={key} keyIndex={index}/>
+                <Key keyVal={key} keyIndex={index} disabled={disabledLetters.includes(key)}/>
               </div>
           )
         })}
